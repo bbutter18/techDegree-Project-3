@@ -58,8 +58,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="down_full"/>
                                 <connections>
-                                    <action selector="DownFull:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L0U-W5-AeA"/>
-                                    <action selector="fullDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2iv-HP-uT6"/>
+                                    <action selector="downFull:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPd-i1-ika"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hw5-3D-uuc" userLabel="UpHalf1">
@@ -67,8 +66,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="up_half"/>
                                 <connections>
-                                    <action selector="UpHalf1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAo-qH-86f"/>
-                                    <action selector="halfUp1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egv-fa-9bZ"/>
+                                    <action selector="upHalf1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hw0-x2-JIt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyl-eu-ydO" userLabel="DownHalf1">
@@ -76,8 +74,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="down_half"/>
                                 <connections>
-                                    <action selector="DownHalf1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWN-Ub-aVo"/>
-                                    <action selector="halfDown1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sbA-oF-DYN"/>
+                                    <action selector="downHalf1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BQ-db-mPD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-3s-ucn" userLabel="UpHalf2">
@@ -85,8 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="up_half"/>
                                 <connections>
-                                    <action selector="UpHalf2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jIV-cY-Jn4"/>
-                                    <action selector="halfUp2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjs-Iw-MM9"/>
+                                    <action selector="upHalf2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ujg-ht-7wb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrA-Of-Q40" userLabel="DownHalf2">
@@ -94,8 +90,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="down_half"/>
                                 <connections>
-                                    <action selector="DownHalf2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PuN-B1-l9t"/>
-                                    <action selector="halfDown2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Fo-K5-9Ir"/>
+                                    <action selector="upDown2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SHY-Ul-rbV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNU-3k-1LD" userLabel="UpFull">
@@ -103,8 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="up_full"/>
                                 <connections>
-                                    <action selector="UpFull:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc8-GK-Zgz"/>
-                                    <action selector="fullUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ecj-Si-szD"/>
+                                    <action selector="upFull:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZZT-8L-ctY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="shake to complete" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuS-T7-C22" userLabel="InstructionsLabel">
@@ -115,28 +109,62 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpc-3J-VYG" userLabel="NextRoundButton">
-                                <rect key="frame" x="121" y="580" width="133" height="38"/>
+                                <rect key="frame" x="104" y="568" width="168" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="next_round_success">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l8-z5-4bb" userLabel="PlayAgainButton">
+                                <rect key="frame" x="104" y="327" width="168" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="play_again"/>
                                 <connections>
-                                    <action selector="nextRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rZE-2O-lH7"/>
+                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dHT-hJ-rN7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Scored:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dbb-bH-s6h" userLabel="scoreTitle">
+                                <rect key="frame" x="89" y="173" width="198" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-wg-XAW" userLabel="scoreLabel">
+                                <rect key="frame" x="104" y="227" width="168" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="z86-Db-CbX" userLabel="timerLabel">
+                                <rect key="frame" x="104" y="554" width="168" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.086274810135364532" green="0.090963788330554962" blue="0.39025890827178955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="DownFull" destination="HPe-49-0Ew" id="QUK-3H-r31"/>
-                        <outlet property="DownHalf1" destination="tyl-eu-ydO" id="ROd-Mw-AAi"/>
-                        <outlet property="DownHalf2" destination="RrA-Of-Q40" id="ubL-ee-X2x"/>
                         <outlet property="InstructionsLabel" destination="AuS-T7-C22" id="Paj-Yl-ZZV"/>
                         <outlet property="Label1" destination="Id9-ml-em5" id="G5H-DS-Ttg"/>
                         <outlet property="Label2" destination="sio-zr-gH8" id="zGQ-ow-LlW"/>
                         <outlet property="Label3" destination="IhZ-Y8-a6e" id="5CP-Od-wmt"/>
                         <outlet property="Label4" destination="VBS-wv-8sE" id="AWB-gl-XYJ"/>
-                        <outlet property="NextRoundButton" destination="lpc-3J-VYG" id="3qx-fY-xb6"/>
-                        <outlet property="UpFull" destination="vNU-3k-1LD" id="h73-bs-AeH"/>
-                        <outlet property="UpHalf1" destination="Hw5-3D-uuc" id="H5P-CB-epO"/>
-                        <outlet property="UpHalf2" destination="W6b-3s-ucn" id="4hr-ym-LhQ"/>
+                        <outlet property="NextRoundButton" destination="lpc-3J-VYG" id="Ypb-KM-tmN"/>
+                        <outlet property="downFull" destination="HPe-49-0Ew" id="QtH-kj-ULN"/>
+                        <outlet property="downHalfer1" destination="tyl-eu-ydO" id="UCK-5Z-x9I"/>
+                        <outlet property="downHalfer2" destination="RrA-Of-Q40" id="Kqm-dz-X6E"/>
+                        <outlet property="finalScore" destination="gcH-wg-XAW" id="HNn-we-5lC"/>
+                        <outlet property="playAgain" destination="9l8-z5-4bb" id="S8f-lp-5dj"/>
+                        <outlet property="scoreStatement" destination="dbb-bH-s6h" id="yeU-5O-HJ0"/>
+                        <outlet property="timeLabel" destination="z86-Db-CbX" id="Bt4-RO-Ae7"/>
+                        <outlet property="upFull" destination="vNU-3k-1LD" id="2bL-UX-gab"/>
+                        <outlet property="upHalfer1" destination="Hw5-3D-uuc" id="btI-TY-HMA"/>
+                        <outlet property="upHalfer2" destination="W6b-3s-ucn" id="3JF-g4-ed1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -147,6 +175,8 @@
     <resources>
         <image name="down_full" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
+        <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
     </resources>

@@ -32,7 +32,18 @@ struct groupOfEvents {
         eventCreator(event: "The Fantastic Four battle Galactus and Silver Surfer in the 'Galactus Trilogy'", date: 1966),
         eventCreator(event: "The comic book market in the United States and Canada is estimated at $1.09 Billion", date: 2016),
         eventCreator(event: "Captain America crosses over into the '60's and joins the 'Avengers,' briding past and present superheroes in 'Avengers #4'", date: 1965),
-        eventCreator(event: "'The Amazing Spider-Man #33' is released, marking one of hte first times in a comic there was doubt if the superhero will actually come out on top", date: 1965)
+        eventCreator(event: "'The Amazing Spider-Man #33' is released, marking one of the first times in a comic there was doubt if the superhero will actually come out on top", date: 1965),
+        eventCreator(event: "Rob Liefeld and Fabian Nicieza introduce the world to the 'Merc with a Mouth' with Deapool in New Mutans #98", date: 1991),
+        eventCreator(event: "Deadpool breaks the 4th wall in 'Dear Deapool' and goes after the comic industry in Cable & Deadpool #13", date: 2005),
+        eventCreator(event: "Norman Osborn, aka The Green Goblin, kills Gwen Stacy - Spider Man's love interest - in 'The Amazing Spider-Man #121-122", date: 1973),
+        eventCreator(event: "The Justice League is born in 'The Brave and the Bold #28' with Aquaman, Batman, Flash, Green Lanter, Martian Manhunter, Superman and Wonder Woman", date: 1960),
+        eventCreator(event: "Wonder Woman fights Ares in 'Wonder Woman #1'", date: 1942),
+        eventCreator(event: "'Flahspoint' storyline is release, where Barry Allen (Flash) witnesses Thomas Wayne as Batman and Superman being held captive by the US Government", date: 2011),
+        eventCreator(event: "The illuminati deem Hulk too dangerous for Earth and send him away in a rocket ship which crashes on Planet Sakaar, starting the 'Planet Hulk' storyline", date: 2006),
+        eventCreator(event: "Iron Man battles alcoholism and coping with his many misfortunes in the 'Demon in a Bottle' storyline", date: 1979),
+        eventCreator(event: "Tony Stark, aka Iron Man, explores Cold War themes and battles communists in his comics' debut in 'Tales of Suspense #39'", date: 1963),
+        eventCreator(event: "Superman battles Doomsday and is ultimately defeated in 'Superman: The Man of Steel #17-18'", date: 1992),
+        eventCreator(event: "Thanos makes his debut and fights Drax the Destroyer and Iron Man on planet Titan, Thanos' home world, in 'The Invincible Iron Man #55'", date: 1973)
         
         
     ]

@@ -10,19 +10,19 @@ import UIKit
 import GameKit
 import CoreFoundation
 
-//MARK: Properties
-
-
-let roundsPerGame = 6
-var score = 0
-var questionsAsked = 0
-var displayedEvents: [eventCreator] = []
-let listOfEvents = groupOfEvents()
-
-
 
 class ViewController: UIViewController {
 
+//MARK: Properties
+    
+    let roundsPerGame = 6
+    var score = 0
+    var questionsAsked = 0
+    var displayedEvents: [eventCreator] = []
+    let listOfEvents = groupOfEvents()
+    var timeToAnswer = 60
+    var timer = Timer()
+    
     
 //MARK: Outlets
     
@@ -32,31 +32,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var Label3: UILabel!
     @IBOutlet weak var Label4: UILabel!
     
+    @IBOutlet weak var downFull: UIButton!
+    @IBOutlet weak var upHalfer1: UIButton!
     
-    @IBOutlet weak var DownFull: UIButton!
-    @IBOutlet weak var UpHalf1: UIButton!
-    @IBOutlet weak var DownHalf1: UIButton!
-    @IBOutlet weak var UpHalf2: UIButton!
-    @IBOutlet weak var DownHalf2: UIButton!
-    @IBOutlet weak var UpFull: UIButton!
+    @IBOutlet weak var downHalfer1: UIButton!
+    @IBOutlet weak var upHalfer2: UIButton!
     
+    @IBOutlet weak var downHalfer2: UIButton!
+    @IBOutlet weak var upFull: UIButton!
     
     @IBOutlet weak var NextRoundButton: UIButton!
     @IBOutlet weak var InstructionsLabel: UILabel!
     
+    @IBOutlet weak var playAgain: UIButton!
+    
+    @IBOutlet weak var scoreStatement: UILabel!
+    @IBOutlet weak var finalScore: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        NextRoundButton.isHidden = true
         setupGame()
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     
 //MARK: Setup Game
@@ -80,15 +83,18 @@ class ViewController: UIViewController {
     }
     
     func checkAnswer() {
+        timeLabel.isHidden = true
+        timer.invalidate()
+        
         if displayedEvents[0].date <= displayedEvents[1].date &&
             displayedEvents[1].date <= displayedEvents[2].date &&
             displayedEvents[2].date <= displayedEvents[3].date {
             
             score += 1
             
-            NextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: .normal)
+            NextRoundButton.setBackgroundImage(UIImage(named: "next_round_success.png"), for: .normal)
         } else {
-            NextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: .normal)
+            NextRoundButton.setBackgroundImage(UIImage(named: "next_round_fail.png"), for: .normal)
             
         }
         
@@ -123,25 +129,70 @@ class ViewController: UIViewController {
     
     func nextRound() {
         displayedEvents.removeAll()
+        timeToAnswer = 60
         
         if questionsAsked == roundsPerGame {
-            
+            gameOver()
         } else {
-            
             setupGame()
-            
         }
     }
     
     func setupGame() {
         questionsAsked += 1
-        //NextRoundButton.isHidden = true
+        NextRoundButton.isHidden = true
+        InstructionsLabel.isHidden = false
+        timeLabel.isHidden = false
+        timeLabel.text = "0:60"
+        
+        playAgain.isHidden = true
+        scoreStatement.isHidden = true
+        finalScore.isHidden = true
         
         getEvents()
         setLabelText()
+        startTimer()
         
     }
+    
+    func gameOver() {
+        hideAllLabelsAndButtons()
+        
+        NextRoundButton.isHidden = true
+        InstructionsLabel.isHidden = true
+        timeLabel.isHidden = true
+        
+        scoreStatement.isHidden = false
+        finalScore.isHidden = false
+        playAgain.isHidden = false
+        
+        finalScore.text = "\(score)/6"
+    }
 
+//MARK: Timer Logic
+    
+    func startTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        timeToAnswer -= 1
+        
+        if timeToAnswer >= 10 {
+            timeLabel.text = "0:\(timeToAnswer)"
+        } else if timeToAnswer < 10 {
+            timeLabel.text = "0:0\(timeToAnswer)"
+        }
+        
+        if timeToAnswer <= 0 {
+            timer.invalidate()
+            checkAnswer()
+            loadNextRound(delay: 2)
+        }
+    }
+    
+    
 //MARK: Setup Labels and Game Buttons
     
     func setLabel1() {
@@ -171,74 +222,122 @@ class ViewController: UIViewController {
         
     }
     
+    func hideAllLabelsAndButtons() {
+        Label1.isHidden = true
+        Label2.isHidden = true
+        Label3.isHidden = true
+        Label4.isHidden = true
+        
+        downFull.isHidden = true
+        downHalfer1.isHidden = true
+        upHalfer1.isHidden = true
+        downHalfer2.isHidden = true
+        upHalfer2.isHidden = true
+        upFull.isHidden = true
+    }
+    
+    func unHideAllLabelsAndButtons() {
+        Label1.isHidden = false
+        Label2.isHidden = false
+        Label3.isHidden = false
+        Label4.isHidden = false
+        
+        downFull.isHidden = false
+        downHalfer1.isHidden = false
+        upHalfer1.isHidden = false
+        downHalfer2.isHidden = false
+        upHalfer2.isHidden = false
+        upFull.isHidden = false
+    }
     
     
 //MARK: Actions
     
-    @IBAction func DownFull(_ sender: UIButton) {
-        let L1 = Label1
-        let L2 = Label2
+    
+    @IBAction func downFull(_ sender: UIButton) {
         
-        Label1 = L2
-        Label2 = L1
+       displayedEvents.swapAt(0, 1)
         
-        swap(&displayedEvents[0], &displayedEvents[1])
+        //downFull.setImage(UIImage(named: "down_full_selected.png"), for: .selected)
+        setLabel1()
+        setLabel2()
+    }
+    
+    @IBAction func upHalf1(_ sender: UIButton) {
+       displayedEvents.swapAt(1, 0)
+        
+        setLabel1()
+        setLabel2()
     }
     
     
-    @IBAction func UpHalf1(_ sender: UIButton) {
-        let L1 = Label1
-        let L2 = Label2
+    @IBAction func downHalf1(_ sender: UIButton) {
         
-        Label1 = L2
-        Label2 = L1
+        displayedEvents.swapAt(1, 2)
+     
+        setLabel2()
+        setLabel3()
+    }
+    
+    @IBAction func upHalf2(_ sender: UIButton) {
         
-        swap(&displayedEvents[1], &displayedEvents[0])
+        displayedEvents.swapAt(2, 1)
+        
+        setLabel2()
+        setLabel3()
+    }
+    
+    @IBAction func upDown2(_ sender: UIButton) {
+        
+        displayedEvents.swapAt(2, 3)
+        
+        setLabel3()
+        setLabel4()
+    }
+    
+    @IBAction func upFull(_ sender: UIButton) {
+        
+        displayedEvents.swapAt(3, 2)
+        
+        setLabel3()
+        setLabel4()
     }
     
     
-    @IBAction func DownHalf1(_ sender: UIButton) {
-        let L2 = Label2
-        let L3 = Label3
+    @IBAction func playAgainButton(_ sender: UIButton) {
+        score = 0
+        questionsAsked = 0
+        timeToAnswer = 60
+        displayedEvents.removeAll()
+        unHideAllLabelsAndButtons()
         
-        Label2 = L3
-        Label3 = L2
-        
-        swap(&displayedEvents[1], &displayedEvents[2])
+        setupGame()
     }
     
     
-    @IBAction func UpHalf2(_ sender: UIButton) {
-        let L2 = Label2
-        let L3 = Label3
-        
-        Label2 = L3
-        Label3 = L2
-        
-        swap(&displayedEvents[2], &displayedEvents[1])
-    }
     
     
-    @IBAction func DownHalf2(_ sender: UIButton) {
-        let L3 = Label3
-        let L4 = Label4
-        
-        Label4 = L3
-        Label3 = L4
-        
-        swap(&displayedEvents[2], &displayedEvents[3])
-    }
     
     
-    @IBAction func UpFull(_ sender: UIButton) {
-        let L3 = Label3
-        let L4 = Label4
+
         
-        Label4 = L3
-        Label3 = L4
+    
+    
+    
+    
+
+       
+    
+    
+    
         
-        swap(&displayedEvents[3], &displayedEvents[2])
-    }
+        
+    
+    
+    
+    
+       
+    
     
 
 
